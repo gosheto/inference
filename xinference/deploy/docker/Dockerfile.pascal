@@ -39,7 +39,7 @@
 # ---------------------------------------------------------------------------
 # Stage 1: build the Web UI static export
 # ---------------------------------------------------------------------------
-FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
+FROM node:20.19.0-slim AS web-builder
 
 WORKDIR /opt/inference/frontend
 # Keep dependency installation cached when only frontend sources change.

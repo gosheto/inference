@@ -39,7 +39,7 @@
 # ---------------------------------------------------------------------------
 # Stage 1: build the Web UI static export
 # ---------------------------------------------------------------------------
-FROM node:20.19.0-slim AS web-builder
+FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
 
 WORKDIR /opt/inference/frontend
 # Keep dependency installation cached when only frontend sources change.
@@ -53,10 +53,10 @@ RUN npm run build
 # ---------------------------------------------------------------------------
 # Stage 2: runtime image
 # ---------------------------------------------------------------------------
-FROM nvidia/cuda:12.6.3-devel-ubuntu22.04
+FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
 
 ARG PIP_INDEX=https://pypi.org/simple
-ARG TORCH_INDEX=https://download.pytorch.org/whl/cu126
+ARG TORCH_INDEX=https://download.pytorch.org/whl/cu118
 
 ENV DEBIAN_FRONTEND=noninteractive
 

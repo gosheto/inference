@@ -134,9 +134,10 @@ ENGINE_VIRTUALENV_INDEX_STRATEGY: Dict[str, str] = {
 # The prebuilt offline mirror targets cu130, but online/non-Docker installs
 # keep the CUDA wheel mappings they supported before that mirror was added.
 PYTORCH_CUDA_WHEEL_URLS: Dict[str, str] = {
-    "cu130": "https://download.pytorch.org/whl/cu130",
-    "cu129": "https://download.pytorch.org/whl/cu129",
-    "cu128": "https://download.pytorch.org/whl/cu128",
+    #"cu130": "https://download.pytorch.org/whl/cu130",
+    #"cu129": "https://download.pytorch.org/whl/cu129",
+    #"cu128": "https://download.pytorch.org/whl/cu128",
+    "cu118": "https://download.pytorch.org/whl/cu118",
 }
 
 # Packages that use PyTorch CUDA wheels

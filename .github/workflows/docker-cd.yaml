@@ -1,11 +1,6 @@
 name: Xinference CD for DockerHub
 
-on:
-  schedule:
-    - cron: '0 18 * * *'
-  push:
-    tags:
-      - '*'
+
   workflow_dispatch:
 
 concurrency:
